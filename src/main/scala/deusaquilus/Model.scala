@@ -1,5 +1,7 @@
 package deusaquilus
 
+import java.util.UUID
+
 trait HumanLike { def id: Int; def age: Int }
 case class Human(id: Int, firstName: String, lastName: String, age: Int, membership: String, segment: String) extends HumanLike
 case class SuperHuman(id: Int, heroName: String, age: Int, side: String)                                      extends HumanLike
@@ -13,4 +15,4 @@ case class Yetti(id: Int, uniqueGruntingSound: String, age: Int)
 
 case class Houses(id: Int, owner: Int, origin: String, hasChargingPort: Boolean)
 case class PricingYears(startYear: Int, endYear: Int, pricing: String, insaneMembership: String, voltage: Int)
-case class Record(name: String, age: Int, membership: String, id: Int, hid: Int)
+case class Record(name: String, age: Int, membership: String, id: Int, hid: Int, cid: Option[UUID] = None)
